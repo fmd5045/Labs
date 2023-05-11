@@ -12,10 +12,8 @@ public class UserInputDemo {
 		System.out.println("Pleassure to meet you "+firstName+" "+ lastName+"!");
 	}
 }
-		/*if (username.equals("samy123") && password.equals("12345")) {
-		 System.out.println("Welcome back " + username);
-		    } else { 
-		 System.out.println("Inaccurate credentials!"); 
-		} // end of else 
-		 }   // end of main() 
-		}  // end of UserInputDemo class*/
+
+
+//bmi calc
+// for imperial system its 703*(weight[lbs]/height^2[in])
+// for metric system its weight[kg]/height[meters]
