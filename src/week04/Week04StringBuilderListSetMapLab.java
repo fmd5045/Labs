@@ -27,25 +27,41 @@ public class Week04StringBuilderListSetMapLab {
 		// 2. List of String:
 		//		a. Create a list of Strings 
 		//		b. Add 5 Strings to it, each with a different length
-
+			List<String> newList = new ArrayList<>();
+			newList.add("Knicks");
+			newList.add("Lakers");
+			newList.add("Heat");
+			newList.add("Nuggets");
+			newList.add("Celtics");
 		
 		// 3. Write and test a method that takes a list of strings 
 		//			and returns the shortest string
-
+			
+			System.out.println("The shortest string on the list is: "+longestString(newList));
 		
 		// 4. Write and test a method that takes a list of strings 
 		//			and returns the list with the first and last element switched
-
+			System.out.println("My list is: "+ switchingFirstAndLast(newList));
 		
 		// 5. Write and test a method that takes a list of strings 
 		//			and returns a string with all the list elements concatenated to each other,
 		// 			separated by a comma
-
+			System.out.println("My concatinated string is: "+ concatinatedStrings(newList));
 		
 		// 6. Write and test a method that takes a list of strings and a string 
 		//			and returns a new list with all strings from the original list
 		// 			containing the second string parameter (i.e. like a search method)
-
+			List<String> anotherList = new ArrayList<>();
+			anotherList.add("Appreciation"); 
+			anotherList.add("Hospital");
+			anotherList.add("Falling");
+			anotherList.add("Purification");
+			anotherList.add("Aviation");
+			anotherList.add("ionic");
+			
+			String word = "ion";
+			
+			System.out.println("Words on my list that contain ion : "+ inclusionOfStringInList(anotherList,word));
 		
 		// 7. Write and test a method that takes a list of integers 
 		//			and returns a List<List<Integer>> with the following conditions specified
@@ -59,22 +75,37 @@ public class Week04StringBuilderListSetMapLab {
 		
 		// 8. Write and test a method that takes a list of strings 
 		//			and returns a list of integers that contains the length of each string
-
+			System.out.println("The length of each string on the list are :"+lenghtOfEachString(anotherList));
 
 		
 		// 9. Create a set of strings and add 5 values
-
+			Set<String> carMakes = new HashSet<>();
+			carMakes.add("Honda");
+			carMakes.add("Toyota");
+			carMakes.add("BWM");
+			carMakes.add("Mercedes");
+			carMakes.add("Ford");
+			
+			System.out.println("Items on the car list are :"+carMakes);
 		
 		
 		// 10. Write and test a method that takes a set of strings and a character 
 		//			and returns a set of strings consisting of all the strings in the
 		// 			input set that start with the character parameter.
-
+			char testingChar = 'b';
+			Set<String> testingSet = new HashSet<>();
+			testingSet.add("Buffalo");
+			testingSet.add("Bingo");
+			testingSet.add("Domino");
+		    testingSet.add("Cart");
+		    testingSet.add("beautiful");
+			
+			System.out.println("The words on the set that start with "+testingChar+" are "+wordsThatStartWithChar(testingSet, testingChar));
 
 		
 		// 11. Write and test a method that takes a set of strings 
 		//			and returns a list of the same strings
-	
+			System.out.println("The new set to a string are: "+setToList(testingSet));
 		
 
 		// 12. Write and test a method that takes a set of integers 
@@ -100,7 +131,85 @@ public class Week04StringBuilderListSetMapLab {
 
 	}
 	
+	// Method 3:
+	public static String longestString(List<String> someList) {
+		String shortestString = someList.get(0);
+		for(String item: someList) {
+			if(shortestString.length()<item.length()) {
+				shortestString = item;
+			}
+		}
+		return shortestString;
+	}
 	
+	//Method 4:
+	public static List<String> switchingFirstAndLast(List<String> someList) {
+		List<String> newList = new ArrayList<>(someList);
+		newList.set(0,someList.get(someList.size()-1));
+		newList.set(someList.size()-1,someList.get(0));
+		
+		return newList;	
+	}
+	
+	//Method 5:
+	public static String concatinatedStrings(List<String> someList) {
+		String concat = "";
+		for(int i=0 ; i < someList.size()-1; i++) {
+			concat+= someList.get(i)+", ";
+		}
+		concat+=someList.get(someList.size()-1)+".";
+		return concat;
+	}
+	
+	//Method 6:
+	public static List<String> inclusionOfStringInList(List<String> someList, String word) {
+		List<String> newList = new ArrayList<String>();
+		for(String item: someList) {
+			if( item.contains(word)) {
+				newList.add(item);
+			}
+		}
+		return newList;
+	}
+	
+	//Method 7:
+	
+	
+	// 7. Write and test a method that takes a list of integers 
+	//			and returns a List<List<Integer>> with the following conditions specified
+	//			for the return value:
+	//		a. The first List in the returned value contains any number from the input list 
+	//			that is divisible by 2
+	//		b. The second List contains values from the input list that are divisible by 3
+	//		c. The third containing values divisible by 5, and 
+	//		d. The fourth all numbers from the input List not divisible by 2, 3, or 5
+	
+	
+	//Method 8:
+		public static List<Integer> lenghtOfEachString(List<String> stringList) {
+			List<Integer> newList = new ArrayList<>();
+			for(String len: stringList) {
+				newList.add(len.length());
+			}
+			return newList;
+		}
+	//Method10:
+		public static Set<String> wordsThatStartWithChar(Set<String> someSet, char character) {
+			Set<String> newSet = new HashSet<>();
+			for(String item: someSet) {
+				if(item.charAt(0) == character) {
+					newSet.add(item);
+				}
+			}
+			return newSet;
+		}
+			
+	//Method 11:
+		public static List<String> setToList(Set<String> someSet) {
+			List<String> newList = new ArrayList<>(someSet);
+			return newList;
+		}
+
 	// Method 15:
 	
 	

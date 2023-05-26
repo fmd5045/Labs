@@ -104,8 +104,8 @@ public class Week03ArraysAndMethodsLab {
 		// 16. Write and test a method that takes an array of string and a string and 
 		//			returns true if the string passed in exists in the array
 			String[] arr = {"McDonald", "BurgerKing", "Arbys", "Wendys", "Subway"};
-			String str = "Arbys";
-			/*System.out.println("The array does contain the string "+ str+ " :"+ arrayContains(arr, str));*/
+			String str = "chuck";
+			System.out.println("The array does contain the string "+ str+ " :"+ arrayContains(arr, str));
 		
 		// 17. Write and test a method that takes an array of int and 
 		//			returns the smallest number in the array
@@ -133,7 +133,7 @@ public class Week03ArraysAndMethodsLab {
 	
 		// 21. Write and test a method that takes a string and 
 		//			returns true if the string is a palindrome
-			String wordUsed = "kayaks";
+			String wordUsed = "kayak";
 			System.out.println("The word "+wordUsed+" is a palindrome: "+ palindrome(wordUsed));
 			
 
@@ -157,13 +157,18 @@ public class Week03ArraysAndMethodsLab {
 	public static boolean stringIsGreaterThanInt(String str, int number ) {
 		return (str.length()> number);
 	}
-	
+
 	// Method 16:
-	/*public static boolean arrayContains(String[] arr, String str) {
+	public static String arrayContains(String[] arr, String str) {
 		for(int i =0; i< arr.length; i++) {
-		if(arr[i] == str)
-			return true;
-	}*/
+			if(arr[i].equals(str)) {
+				return "true";
+			}
+			else {
+				return "false";
+			}
+		}
+	}
 	
 	// Method 17:
 	public static int smallestOnList(int[] number) {
