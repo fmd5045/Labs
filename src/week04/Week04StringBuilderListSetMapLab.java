@@ -111,23 +111,50 @@ public class Week04StringBuilderListSetMapLab {
 		// 12. Write and test a method that takes a set of integers 
 		//			and returns a new set of integers containing only even numbers 
 		//			from the original set
-
-
+			Set<Integer> setOfInt = new HashSet<>();
+			setOfInt.add(3);
+			setOfInt.add(5);
+			setOfInt.add(3);
+			setOfInt.add(4);
+			setOfInt.add(16);
+			setOfInt.add(13);
+			setOfInt.add(106);
+			
+			System.out.println("The even numbers from the set are: "+ onlyEvenSet(setOfInt));
 		
 		// 13. Create a map of string and string and add 3 items to it where the key of each
 		// 			is a word and the value is the definition of the word
-
-	
-		
+			Map<String, String> newStringMap = new HashMap<>();
+			newStringMap.put("Accismus", "A form of irony in which someone feigns indifference to something he or she desires. Aesop’s fable The Fox and the Grapes illustrates accismus when the fox dismisses some grapes he is unable to reach, stating that he is sure they are sour anyway.");
+			newStringMap.put("Riposte", "A quick or witty retaliatory reply. In the context of the sport of fencing, a riposte means a counterattack that is made after successfully fending off one’s opponent.");
+			newStringMap.put("Anachronism","An anachronism is something (or someone) that is out of place in terms of time or chronology. This is most common with old-fashioned items in a modern setting, but can also occur with futuristic items in period pieces. Most anachronisms are there by mistake, especially within movies and television shows.");
+			
 		// 14. Write and test a method that takes a Map<String, String> and a string 
 		// 			and returns the value for a key in the map that matches the
 		// 			string parameter (i.e. like a language dictionary lookup)
-
-		
+			String dictionaryWord = "Accismus";
+			System.out.println("The definition of "+dictionaryWord+" is: "+wordDefinition(newStringMap,dictionaryWord));
+			
 		// 15. Write and test a method that takes a List<String> 
 		//			and returns a Map<Character, Integer> containing a count of 
 		//			all the strings that start with a given character
-		
+			List<String> stringList = new ArrayList<>();
+			stringList.add("Banana");
+			stringList.add("Pear");
+			stringList.add("Lime");
+			stringList.add("Pitaya");
+			stringList.add("Lemon");
+			stringList.add("Pineapple");
+			stringList.add("Kiwi");
+			stringList.add("Persimmon");
+			stringList.add("Guava");
+			stringList.add("Peach");
+			
+			char myCharacter = 'P';
+			
+			System.out.println("Words on the list that start with "+ myCharacter + " are :" +mapStartingWith(stringList, myCharacter));
+			
+			
 
 	}
 	
@@ -173,8 +200,6 @@ public class Week04StringBuilderListSetMapLab {
 	}
 	
 	//Method 7:
-	
-	
 	// 7. Write and test a method that takes a list of integers 
 	//			and returns a List<List<Integer>> with the following conditions specified
 	//			for the return value:
@@ -209,49 +234,43 @@ public class Week04StringBuilderListSetMapLab {
 			List<String> newList = new ArrayList<>(someSet);
 			return newList;
 		}
-
+	
+	//Method 12:
+		public static Set<Integer> onlyEvenSet(Set<Integer> set) {
+			Set <Integer>onlyEvenSet = new HashSet<>();
+			for(int item: set) {
+				if(item%2 ==0) {
+					onlyEvenSet.add(item);
+				}
+			}
+			return onlyEvenSet;
+		}
+		
+	//Method 14:
+		public static String wordDefinition(Map<String, String> mapCollection, String word) {
+			if(mapCollection.containsKey(word)) {
+				return mapCollection.get(word);
+			}
+			else {
+				return "This word does not exist in our map collection";
+			}
+				
+		}
 	// Method 15:
+		public static Map<Character, Integer> mapStartingWith(List<String> someList, char m) {
+			Map<Character, Integer> newMap = new HashMap<>();
+			int sum = 0;
+			for(String word: someList) {
+				if(word.charAt(0)== m) {
+					sum++;
+				}
+			}
+			newMap.put(m,sum);
+			return newMap;
+		}
+		// 15. Write and test a method that takes a List<String> 
+				//			and returns a Map<Character, Integer> containing a count of 
+				//			all the strings that start with a given character
 	
 	
-	
-	// Method 14:
-	
-
-	
-	// Method 12:
-	
-
-	
-	// Method 11:
-	
-
-
-	// Method 10:
-	
-
-	
-	// Method 8:
-	
-
-	
-	// Method 7:
-	
-
-	
-	// Method 6:
-	
-
-	
-	// Method 5:
-	
-	
-	
-	// Method 4:
-	
-	
-	
-	// Method 3:
-	
-	
-
 }
