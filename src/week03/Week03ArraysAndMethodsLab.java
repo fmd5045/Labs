@@ -159,15 +159,17 @@ public class Week03ArraysAndMethodsLab {
 	}
 
 	// Method 16:
-	public static String arrayContains(String[] arr, String str) {
+	public static boolean arrayContains(String[] arr, String str) {
+		boolean variable = true;
 		for(int i =0; i< arr.length; i++) {
 			if(arr[i].equals(str)) {
-				return "true";
+				variable =  true;
 			}
 			else {
-				return "false";
+				variable = false;
 			}
 		}
+		return variable;
 	}
 	
 	// Method 17:
