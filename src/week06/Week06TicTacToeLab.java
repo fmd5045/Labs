@@ -118,7 +118,9 @@ public class Week06TicTacToeLab {
 		
 		
 	public static void main(String[] args) {
-
+		int[] myNumbers = new int[5]; 
+ 
+		
 		// Open a Scanner to read User Input to Play the Game
 		Scanner in = new Scanner(System.in);
 		GameBoard gameBoard = new GameBoard();
@@ -176,8 +178,10 @@ public class Week06TicTacToeLab {
 		}
 		System.out.println("-------------------------");
 
+		System.out.println(true||false);
 		// Close the Scanner once the game is done!
 		in.close();
+
 	}
 			
 		

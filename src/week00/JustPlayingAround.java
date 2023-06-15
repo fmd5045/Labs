@@ -31,5 +31,24 @@ public class JustPlayingAround {
 			// decrements the digit by 1
 			count -- ;
 		}
+		
+		for(int index = 0; index <= 100;index++) {
+			if(index% 2 ==0 ) {
+				System.out.println(index);
+			}
+		}
+		String result = "";
+		String name = "Shauna";
+		for (int index = 0; index < 3; index ++) {
+			result += name;
+		}
+		System.out.println(result);
+		
+		String word = "";
+		for(int index = 0; index<=5; index ++) {
+			word+=index;
+		}
+		System.out.println(word);
+			
 	}
 }
